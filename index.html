@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Freelancer Marketplace</h1>
+            <div id="nav-links">
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Auth Section -->
+        <section id="auth-section">
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="login-btn">Login</button>
+                <p>Not registered? <span id="show-signup">Sign up here</span></p>
+            </div>
+
+            <div id="signup-form" style="display: none;">
+                <h2>Sign Up</h2>
+                <input type="email" id="signup-email" placeholder="Email">
+                <input type="password" id="signup-password" placeholder="Password">
+                <input type="text" id="signup-name" placeholder="Full Name">
+                <select id="signup-role">
+                    <option value="freelancer">Freelancer</option>
+                    <option value="client">Client</option>
+                </select>
+                <button id="signup-btn">Sign Up</button>
+                <p>Have an account? <span id="show-login">Login here</span></p>
+            </div>
+        </section>
+
+        <!-- Main App Section -->
+        <section id="app-section" style="display: none;">
+            <div id="post-job" style="display: none;">
+                <h2>Post a Job</h2>
+                <input type="text" id="job-title" placeholder="Job Title">
+                <textarea id="job-description" placeholder="Job Description"></textarea>
+                <input type="number" id="job-budget" placeholder="Budget ($)">
+                <button id="submit-job">Post Job</button>
+            </div>
+
+            <div id="jobs-list">
+                <h2>Available Jobs</h2>
+                <div id="jobs-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        import './firebase-config.js';
+        import './auth.js';
+        import './jobs.js';
+        import './app.js';
+    </script>
+</body>
+</html>
