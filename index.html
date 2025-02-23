@@ -3,66 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelancer Marketplace</title>
-    <link rel="stylesheet" href="style.css">
+    <title>NexPlore</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Freelancer Marketplace</h1>
-            <div id="nav-links">
-                <button id="logout-btn" style="display: none;">Logout</button>
-            </div>
-        </nav>
-    </header>
+    <div class="container">
+        <!-- Initial Screen with Triangle -->
+        <div class="initial-screen" id="initialScreen">
+            <h1>NexPlore</h1>
+            <p>Click the triangle</p>
+            <div class="triangle" id="triangle">▼</div>
+        </div>
 
-    <main>
-        <!-- Auth Section -->
-        <section id="auth-section">
-            <div id="login-form">
-                <h2>Login</h2>
-                <input type="email" id="login-email" placeholder="Email">
-                <input type="password" id="login-password" placeholder="Password">
-                <button id="login-btn">Login</button>
-                <p>Not registered? <span id="show-signup">Sign up here</span></p>
-            </div>
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen" style="display: none;">
+            <h1>NexPlore</h1>
+            <p>"Welcome to NexPlore — where freelancers and opportunities collide. Whether you're a creative pro, tech wizard, or marketing guru, we connect you with jobs that match your skills and passion. Simple, fast, and built for your success — start exploring today!"</p>
+            <button class="login-btn" id="loginBtn">Log-in</button>
+        </div>
 
-            <div id="signup-form" style="display: none;">
-                <h2>Sign Up</h2>
-                <input type="email" id="signup-email" placeholder="Email">
-                <input type="password" id="signup-password" placeholder="Password">
-                <input type="text" id="signup-name" placeholder="Full Name">
-                <select id="signup-role">
-                    <option value="freelancer">Freelancer</option>
-                    <option value="client">Client</option>
-                </select>
-                <button id="signup-btn">Sign Up</button>
-                <p>Have an account? <span id="show-login">Login here</span></p>
+        <!-- Freelancer/Client Choice Screen -->
+        <div class="choice-screen" id="choiceScreen" style="display: none;">
+            <h2>Freelancer or Client</h2>
+            <div class="choices">
+                <div class="choice-box freelancer" id="freelancer">Freelancer</div>
+                <div class="choice-box client" id="client">Client</div>
             </div>
-        </section>
+        </div>
 
-        <!-- Main App Section -->
-        <section id="app-section" style="display: none;">
-            <div id="post-job" style="display: none;">
-                <h2>Post a Job</h2>
-                <input type="text" id="job-title" placeholder="Job Title">
-                <textarea id="job-description" placeholder="Job Description"></textarea>
-                <input type="number" id="job-budget" placeholder="Budget ($)">
-                <button id="submit-job">Post Job</button>
-            </div>
+        <!-- Search Screen -->
+        <div class="search-screen" id="searchScreen" style="display: none;">
+            <h1>NexPlore</h1>
+            <div class="search-icon"></div> <!-- Simple icon representation with CSS -->
+            <input type="text" id="searchInput" placeholder="What are you looking for?">
+            <button class="send-btn" id="sendBtn">Send</button>
+        </div>
 
-            <div id="jobs-list">
-                <h2>Available Jobs</h2>
-                <div id="jobs-container"></div>
-            </div>
-        </section>
-    </main>
-
-    <script type="module">
-        import './firebase-config.js';
-        import './auth.js';
-        import './jobs.js';
-        import './app.js';
-    </script>
+        <!-- Login Form -->
+        <div class="login-form" id="loginForm" style="display: none;">
+            <h2>Log-in</h2>
+            <input type="email" id="email" placeholder="Enter your email">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button class="login-submit" id="loginSubmit">Log-in</button>
+            <p>Don't have an account? <a href="#" id="signUpLink">Sign-up</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
